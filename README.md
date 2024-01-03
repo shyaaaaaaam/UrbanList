@@ -1,6 +1,6 @@
 # UrbanList
 
-Welcome to UrbanList, your go-to platform for modern property listings. This project aims to provide users with an intuitive interface to explore and discover properties with features such as login, signup, and various property-related functionalities.
+Welcome To UrbanList, Your Go-To Platform For Modern Property Listings. This Project Aims To Provide Users With An Intuitive Interface To Explore And Discover Properties With Features Such As Searching, Login - Signup Tokens, And Various Property-Related Functionalities.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -15,16 +15,16 @@ Welcome to UrbanList, your go-to platform for modern property listings. This pro
 
 ## Introduction
 
-UrbanList is a property listing web application designed to simplify the process of finding, exploring, and managing properties. Whether you are looking for a dream home, an apartment, or commercial spaces, UrbanList has got you covered.
+Urbanlist Is A Property Listing Web Application Designed To Simplify The Process Of Finding, Exploring, And Managing Properties. Whether You Are Looking For A Dream Home, An Apartment, Or Commercial Spaces, Urbanlist Has Got You Covered.
 
 ## Features
 
-- **User Authentication:** Secure user authentication with login and signup functionality.
-- **Property Search:** Intuitive property search with advanced filters, making it easy to find the perfect match.
-- **Detailed Listings:** Comprehensive property listings with high-quality images, floor plans, and virtual tours.
-- **User-friendly Interface:** An easy-to-navigate interface for a comfortable browsing experience.
-- **Media Integration:** View property-related videos and listen to podcasts directly on the platform.
-- **User Statistics:** Track the number of secure users signed up for a personalized experience.
+- **User Authentication:** Secure User Authentication With Login And Signup Functionality.
+- **Property Search:** Intuitive Property Search With Advanced Filters, Making It Easy To Find The Perfect Match.
+- **Detailed Listings:** Comprehensive Property Listings With High-Quality Images, Floor Plans, And Virtual Tours.
+- **User-friendly Interface:** An Easy-To-Navigate Interface For A Comfortable Browsing Experience.
+- **Media Integration:** View Property-Related Videos And Listen To Podcasts Directly On The Platform.
+- **User Statistics:** Track The Number Of Secure Users Signed Up For A Personalized Experience.
 
 ## Getting Started
 
@@ -32,10 +32,13 @@ UrbanList is a property listing web application designed to simplify the process
 
 Make sure you have the following installed:
 
-- Web Browser
-- Web Server (e.g., Apache, Nginx, or use built-in PHP server)
+- Web Browser With Cookies Enabled
+- Web Server (XAMPP)
+- MySQLi Server (XAMPP)
 
 ### Installation
+- Install XAMPP Server From [https://www.apachefriends.org/download.html](XAMPP DOWNLOAD)
+
 
 1. Clone the repository:
 
