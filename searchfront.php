@@ -13,7 +13,7 @@
         $state = strtolower($state);
         $state = str_replace(' ', '', $state);
 
-        $searchResults = mysqli_query($con, "SELECT * FROM listingdata WHERE REPLACE(LOWER(stat), ' ', '') = REPLACE(LOWER('$state'), ' ', '') AND (LOWER(city) = LOWER('$city') OR LOWER(city) LIKE '%$city%') AND expired = 'false' LIMIT 10;");
+        $searchResults = mysqli_query($con, "SELECT * FROM listingdata WHERE REPLACE(LOWER(stat), ' ', '') = REPLACE(LOWER('$state'), ' ', '') AND (LOWER(addy) = LOWER('$city') OR LOWER(city) LIKE '%$city%') AND expired = 'false' LIMIT 10;");
 
         $response = array();
 
