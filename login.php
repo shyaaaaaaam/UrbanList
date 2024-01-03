@@ -103,6 +103,13 @@
       .sa {
         text-align:center;
       }
+
+      footer {
+            text-align: center;
+            padding: 10px;
+            background-color: goldenrod;
+            color: white;
+        }
       
     </style>
 </head>
@@ -196,3 +203,9 @@
         });
     </script>
 </body>
+
+<footer>
+    &copy; 2024 UrbanList. All rights reserved.
+</footer>
+
+</html>
