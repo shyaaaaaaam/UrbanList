@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanList - Modern Property Listings</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+        }
+
+        header {
+            background-color: goldenrod;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .head0 {
+          text-align:center;
+          color: goldenrod;
+          padding:0;
+          margin:0;
+        }
+        
+        .heads {
+          text-align:center;
+          color:grey;
+          padding:1;
+          margin:0;
+        }
+
+        .head1 {
+          text-align:left;
+          font-size:135%;
+          color:blue;
+          padding:105;
+          margin:10;
+        }
+        
+        .head2 {
+          text-align:right;
+          font-size:140%;
+          color:blue;
+          padding:75;
+          margin:0;
+        }
+        
+        .head3 {
+          text-align:left;
+          font-size:135%;
+          color:blue;
+          padding:75;
+          margin:0;
+        }
+        
+        .head4 {
+          text-align:right;
+          font-size:140%;
+          color:blue;
+          padding:75;
+          margin:0;
+        }
+        
+        .head5 {
+          text-align:center;
+          font-size:140%;
+          color:white;
+          padding:75;
+          margin:0;
+        }
+
+        .head6 {
+          text-align:center;
+          font-size:140%;
+          color:blue;
+          padding:75;
+          margin:0;
+        }
+        
+        .headc {
+          text-align:center;
+          font-size:140%;
+          color:blue;
+          padding:75;
+          margin:0;
+        }
+        
+        .headn {
+          color: grey;
+          text-align:center;
+          font-size:140%;
+          color:00FF00;
+          padding:75;
+          margin:0;
+          margin-top:-125;
+        }
+
+        .p1 {
+          text-align:left;
+          font-size:100%;
+          color:Grey;
+          padding:75;
+          margin:0;
+          margin-top:-125;
+        }
+        
+        .p2 {
+          text-align:right;
+          font-size:100%;
+          color:Grey;
+          padding:75;
+          margin-top:-125;
+          margin-left:165;
+        }
+        
+        .p3 {
+          text-align:left;
+          font-size:100%;
+          color:Grey;
+          padding:75;
+          margin-top:-125;
+        }
+        
+        .p4 {
+          text-align:right;
+          font-size:100%;
+          color:Grey;
+          padding:75;
+          margin-top:-125;
+          margin-left:165;
+        }
+
+        .p5 {
+          text-align:left;
+          font-size:100%;
+          color:Grey;
+          padding:75;
+          margin-top:-125;
+        }
+
+        .company-logo {
+            width: 50px;
+            height: auto;
+            margin-right: 1em;
+        }
+
+        .company-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 1;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+        }
+
+        header {
+            background-color: goldenrod;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-logo {
+            width: 50px;
+            height: auto;
+            margin-right: 1em;
+        }
+
+        .company-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 1;
+            margin: 0;
+        }
+
+        #welcomemessage {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .tab {
+            float: left;
+            border: 1px solid white;
+            background-color: goldenrod;
+            width: 17%;
+            height: 800px;
+        }
+
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: white;
+        }
+
+        .tab button.active {
+            background-color: white;
+        }
+
+        .searchtable {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 20px auto 0;
+            background-color: goldenrod;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        select,
+        input {
+            padding: 10px;
+            width: 30%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        input#searchbox {
+            width: 50%;
+        }
+
+        button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: skyblue;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0em;
+        }
+
+        .action-buttons button {
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            margin-right: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-buttons button:hover {
+            background-color: skyblue;
+        }
+
+        .image-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            color: white;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .account {
+            margin-right: 20px;
+        }
+
+        .property-box {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabcontent:not(.active-tab) {
+            display: none;
+        }
+
+        .rounded-box {
+            width: 150px;
+            height: auto;
+            border-radius: 15px;
+            background-color: #e0e0e0;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .slider-image-container {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: auto;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: goldenrod;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: goldenrod;
+            color: white;
+        }
+
+        .media {
+          background-image: url("nyc.jpg");
+          width: 700px;
+          border: 15px solid goldenrod;
+          padding: 50px;
+          margin: 20px auto;
+        }
+        
+        video {
+          display: block;
+          margin: auto;
+        }
+        
+        audio {
+          display: block;
+          margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="logo.png" alt="Company Logo" class="company-logo">
+            <span class="company-name">UrbanList</span>
+        </div>
+
+        <div class="action-buttons">
+            <button onclick="location.href='login.php';">Login</button>
+            <button onclick="location.href='signup.html';">Signup</button>
+            <button onclick="toggleMode()">Change Mode</button>
+        </div>
+
+    </header>
+    <h1 class="head0">UrbanList</h1>
+    <h3 class="heads">Modern Solution To Property Listing &#9989;</h3><br>
+    <h1 class="head1" >View Property From Anywhere, Anytime! &#127759;</h1>
+    <p class="p1">Explore a world of modern and luxurious properties with UrbanList. Our property listings showcase stunning homes, apartments, and commercial spaces in prime locations.</p>
+    <h1 class="head2">Easy Interface - Browse With Comfort &#128343;</h1>
+    <p class="p2">With a user-friendly interface, advanced search filters, and detailed property information, finding your dream property is a breeze. Our listings include high-quality images, floor plans, and virtual tours.</p>
+    <h1 class="head3">Property To Suit Everyone &#9989;</h1>
+    <p class="p3">UrbanList is not just a property listing site, it's a gateway to your next chapter. Discover a diverse range of real estate options, from contemporary urban dwellings to charming countryside retreats.</p>
+    <h1 class="head4">Free Service &#128176;</h1>
+    <p class="p4">Join our community of satisfied homeowners and investors who have found their perfect property through UrbanList. Start your property journey today and turn your dreams into reality with UrbanList - your trusted partner in real estate.</p>
+
+    <div class="searchtable">
+      <select id="state" name="state">
+          <option value="andhrapradesh">Andhra Pradesh</option>
+          <option value="assam">Assam</option>
+          <option value="goa">Goa</option>
+          <option value="gujarat">Gujarat</option>
+          <option value="karnataka">Karnataka</option>
+          <option value="kerala">Kerala</option>
+          <option value="maharashtra">Maharashtra</option>
+          <option value="punjab">Punjab</option>
+          <option value="rajasthan">Rajasthan</option>
+          <option value="tamilnadu">Tamil Nadu</option>
+          <option value="telangana">Telangana</option>
+          <option value="uttarpradesh">Uttar Pradesh</option>
+          <option value="westbengal">West Bengal</option>
+          <option value="chandigarh">Chandigarh</option>
+          <option value="jammukashmir">Jammu & Kashmir</option>
+          <option value="ladakh">Ladakh</option>
+          <option value="puducherry">Puducherry</option>
+      </select>
+      <input type="text" placeholder="Search..." id="searchbox">
+      <button type="button" onclick="validate()">Search</button><br>
+    </div>
+
+    <div id="searchResults"></div>
+
+    <div class="media">
+      <h1 class="head5"><span style="color: grey">Today's Video:</span> Investing In The Right Real Estate:</h1>
+      <video width="500" height="300" controls>
+      <source src="vid.mp4" type="video/mp4">
+      </video><br><hr>
+      <h1 class="head5">Latest Podcast on Digital Currencies:</h1>
+      <audio controls>
+        <source src="aud.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+
+    <h3 class="headc">Number Of Secure Users Signed Up:</h3>
+    <h3 class="headn" id="c">10234</h3>
+
+
+    <script>
+        var interval = setInterval(changeText, 1500);
+        function changeText() {
+          var elem = document.getElementById("c").innerHTML;
+          document.getElementById("c").innerHTML = Number(elem) + 1;
+        }
+
+        function logoutf() {
+            setCookie("id", "", 0);
+            setCookie("email", "", 0);
+            setCookie("password", "", 0);
+            setCookie("name", "", 0);
+            setCookie("phone", "", 0);
+            window.open("front.html", "_self");
+        }
+
+        function validate() {
+            var city = document.getElementById('searchbox').value;
+            if (city == '') {
+                alert("Please Enter A Proper Place!");
+            } else {
+                searchlistings();
+            }
+        }
+
+        function handleBoxClick() {
+            var url = 'login.php';
+            window.location.href = url;
+        }
+
+        function searchlistings() {
+            var city = document.getElementById('searchbox').value;
+            var state = document.getElementById('state').value;
+            var jsons = JSON.stringify({city: city, state: state});
+
+            console.log('Form Data:', jsons);
+
+            fetch('searchfront.php', {
+                method: 'POST',
+                body: jsons,
+            })
+            .then(response => {
+                if (response.ok) {
+                    const contentType = response.headers.get('content-type');
+                    if (contentType && contentType.includes('application/json')) {
+                        return response.json();
+                    } else {
+                        return response.text().then(text => ({ text }));
+                    }
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .then(data => {
+                if (data.text) {
+                    console.log('Response Data (Not JSON):', data.text);
+                } else {
+                    console.log('Response Data:', data);
+                    var searchResultsDiv = document.getElementById("searchResults");
+                    searchResultsDiv.innerHTML = data.html;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function toggleMode() {
+            if (getCookie("backgroundColor") === 'white') {
+                document.body.style.backgroundColor = '#000';
+                setCookie('backgroundColor', 'black', 30);
+            } else {
+                document.body.style.backgroundColor = '#fff';
+                setCookie('backgroundColor', 'white', 30);
+            }
+        }
+
+        function updateSliderButtons(slider) {
+            const prevBtn = slider.parentElement.querySelector('.prev-btn');
+            const nextBtn = slider.parentElement.querySelector('.next-btn');
+            const slideWidth = slider.children[0].offsetWidth;
+            const currentOffset = parseFloat(slider.style.transform.slice(11)) || 0;
+
+            prevBtn.style.display = 'block';
+            nextBtn.style.display = 'block';
+        }
+
+        function prevSlide(btn) {
+            const slider = btn.parentElement.querySelector('.slider-images');
+            const slideWidth = slider.children[0].offsetWidth;
+            const currentOffset = parseFloat(slider.style.transform.slice(11)) || 0;
+            const newOffset = Math.min(currentOffset + slideWidth, 0);
+            slider.style.transform = `translateX(${newOffset}px)`;
+            updateSliderButtons(slider);
+            updateSliderButtons(slider);
+        }
+
+        function nextSlide(btn, event) {
+            const slider = btn.parentElement.querySelector('.slider-images');
+            const slideWidth = slider.children[0].offsetWidth;
+            const currentOffset = parseFloat(slider.style.transform.slice(11)) || 0;
+            const newOffset = Math.max(currentOffset - slideWidth, -(slider.children.length - 1) * slideWidth);
+            slider.style.transform = `translateX(${newOffset}px)`;
+            updateSliderButtons(slider);
+            updateSliderButtons(slider);
+        }
+
+        function stopPropagation(event) {
+            event.stopPropagation();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!getCookie('backgroundColor')) {
+                setCookie("backgroundColor", "white", 60000);
+            }
+            if (getCookie("backgroundColor") == "white") {
+                document.body.style.backgroundColor = "white";
+            } else {
+                document.body.style.backgroundColor = "black";
+            }
+
+            const sliders = document.querySelectorAll('.slider-images');
+            sliders.forEach(slider => updateSliderButtons(slider));
+        });
+    </script>
+</body>
+
+</html>

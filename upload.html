@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanList - Modern Property Listings</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+        }
+
+        header {
+            background-color: goldenrod;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-logo {
+            width: 50px;
+            height: auto;
+            margin-right: 1em;
+        }
+
+        .company-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 1;
+            margin: 0;
+        }
+
+        button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color:white;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: skyblue;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0em;
+        }
+
+        .action-buttons button {
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            margin-right: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-buttons button:hover {
+            background-color: skyblue;
+        }
+
+        fieldset{
+          background-color: grey;
+          border: none;
+          border-radius: 2px;
+          margin-bottom: 12px;
+          overflow: hidden;
+          padding: 0 .625em;
+      }
+
+      label{
+          font-family:"tahoma";
+          cursor: pointer;
+          display: inline-block;
+          padding: 3px 6px;
+          text-align: left;
+          width: 150px;
+          vertical-align: top;
+          color: grey;
+      }
+
+      input{
+          font-size: inherit;
+          display:inline-block;
+          text-align: center;
+          vertical-align: center;
+          margin: 0 auto;
+      }
+      
+      .head {
+          text-align:center;
+          color: grey;
+      }
+      
+      .sa {
+        text-align:center;
+      }
+
+      .touchbot {
+        margin-top: auto;
+        padding-top: 20px;
+      }
+      
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="property.php" style="text-decoration: none; color: inherit;">
+                <img src="logo.png" alt="Company Logo" class="company-logo">
+                <span class="company-name">UrbanList</span>
+            </a>
+        </div>
+
+        <div class="action-buttons">
+            <button onclick="location.href='property.php';">Home</button>
+            <button onclick="logoutf()">Log Out</button>
+            <button onclick="toggleMode()">Change Mode</button>
+        </div>
+
+    </header>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <h2 style="color: grey;"><b>Enter Your Details: </b></h2>
+
+        <label for="name"><b>Full Name: </b></label>
+        <input type="text" id="name" name="name" disabled><br><br>
+
+        <label for="email"><b>Email: </b></label>
+        <input type="email" id="email" name="Email" value="" disabled><br><br>
+
+        <label for="phone"><b>Phone Number:</b></label>
+        <input type="tel" id="phone" name="Phone_number" pattern="[0-9]{10}" value="" required><br><br>
+
+        <label for="title"><b>Listing Title: </b></label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="city"><b>City: </b></label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="state"><b>State: </b></label>
+        <select name="state">
+            <option value="andhrapradesh">Andhra Pradesh</option>
+            <option value="assam">Assam</option>
+            <option value="goa">Goa</option>
+            <option value="gujarat">Gujarat</option>
+            <option value="karnataka">Karnataka</option>
+            <option value="kerala">Kerala</option>
+            <option value="maharashtra">Maharashtra</option>
+            <option value="punjab">Punjab</option>
+            <option value="rajasthan">Rajasthan</option>
+            <option value="tamilnadu">Tamil Nadu</option>
+            <option value="telangana">Telangana</option>
+            <option value="uttarpradesh">Uttar Pradesh</option>
+            <option value="westbengal">West Bengal</option>
+            <option value="chandigarh">Chandigarh</option>
+            <option value="jammukashmir">Jammu & Kashmir</option>
+            <option value="ladakh">Ladakh</option>
+            <option value="puducherry">Puducherry</option>
+        </select><br><br>
+        
+        <label for="address"><b>Address: </b></label>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <label for="bhk"><b>Property BHK Count: </b></label>
+        <input type="text" id="bhk" name="bhk" required><br><br>
+
+        <label for="price"><b>Listing Price: </b></label>
+        <input type="text" id="price" name="price" value="₹" required><br><br>
+
+        <label for="purpose"><b>Purpose: </b></label>
+        <select name="purpose" id="purpose">
+            <option value="rent">Rent</option>
+            <option value="lease">Lease</option>
+            <option value="sale">Sale</option>
+        </select>
+        <br><br>
+
+        <label for="sqft"><b>Square Feet: </b></label>
+        <input type="text" id="sqft" name="sqft" required><br><br>
+
+        <label for="advance"><b>Advance: </b></label>
+        <input type="text" id="advance" name="advance" value="₹" required><br><br>
+
+        <label for="parking"><b>Parking: </b></label>
+        <input type="text" id="parking" name="parking" required><br><br>
+
+        <label for="floor"><b>Floor: </b></label>
+        <input type="text" id="floor" name="floor" value="X/X" required><br><br>
+
+        <label for="balcony"><b>Balcony: </b></label>
+        <input type="text" id="balcony" name="balcony" required><br><br>
+
+        <label for="elevator"><b>Elevator Service: </b></label>
+        <select name="elevator" id="elevator">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <br><br>
+
+        <label for="age"><b>Age: </b></label>
+        <input type="text" id="age" name="age" required><br><br>
+
+        <label for="bathroom"><b>Bathroom Count: </b></label>
+        <input type="text" id="bathroom" name="bathroom" required><br><br>
+
+        <label for="descrip"><b>Description: </b></label>
+        <textarea id="descrip" name="descrip" rows="5" cols="100"></textarea><br><br>
+
+        <label for="secure"><b>Security Guard: </b></label>
+        <select name="secure" id="purpose">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <br><br>
+
+        <label for="files">Select files:</label>
+        <input type="file" id="files" name="files[]" accept="image/*" multiple required><br><br>
+
+        <label for="date"><b>Date Of Listing: </b></label>
+        <input type="text" id="date" name="date" value="" disabled><br><br>
+        </div>
+        <div class="touchbot">
+            <h3 style="color:grey; text-align:center;">By listing this property you agree to our Terms & Conditions.</h3><br>
+            <div class="sa">
+            <button onclick="validate()">Post Listing</button>
+            </div>
+        </div>
+      </form>
+
+    <script>
+        function check(input) {
+            if (document.getElementById('rpassword').value != document.getElementById('password').value) {
+                input.setCustomValidity('Password Must be Matching.');
+            } else {
+                input.setCustomValidity('');
+            }
+            if (document.getElementById('title').value > 499) {
+                input.setCustomValidity('Text Length Too Long! Please Limit Within 500!');
+            } else {
+                input.setCustomValidity('');
+            }
+            if (document.getElementById('descrip').value > 9999) {
+                input.setCustomValidity('Text Length Too Long! Please Limit Within 10000!');
+            } else {
+                input.setCustomValidity('');
+            }
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function logoutf() {
+            setCookie("id", "", 0);
+            setCookie("email", "", 0);
+            setCookie("password", "", 0);
+            setCookie("name", "", 0);
+            setCookie("phone", "", 0);
+            window.open("front.html","_self");
+        }
+
+        function toggleMode() {
+            if (getCookie("backgroundColor") === 'white') {
+                document.body.style.backgroundColor = '#000';
+                setCookie('backgroundColor', 'black', 30);
+            } else {
+                document.body.style.backgroundColor = '#fff';
+                setCookie('backgroundColor', 'white', 30);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!getCookie('backgroundColor')) {
+                setCookie("backgroundColor", "white", 60000)
+            }
+            if (getCookie("backgroundColor") == "white") {
+                document.body.style.backgroundColor = "white";
+            } else {
+                document.body.style.backgroundColor = "black";
+            }
+            document.getElementById("email").value = getCookie("email");
+            document.getElementById("name").value = getCookie("name");
+            document.getElementById("phone").value = getCookie("phone");
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0');
+            var yyyy = today.getFullYear();
+
+            today = dd + '/' + mm + '/' + yyyy;
+            document.getElementById("date").value = today;
+        });
+    </script>
+</body>
+
+</html>
