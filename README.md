@@ -37,7 +37,7 @@ Make sure you have the following installed:
 - MySQLi Server (XAMPP)
 
 ### Installation
-- Install XAMPP Server From [https://www.apachefriends.org/download.html](XAMPP DOWNLOAD)
+- Install XAMPP Server From [XAMPP DOWNLOAD](https://www.apachefriends.org/download.html)
 
 
 1. Clone the repository:
