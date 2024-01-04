@@ -4,7 +4,7 @@
     $jsonData = json_decode(file_get_contents('php://input'), true);
 
     if ($jsonData) {
-        $email = $_COOKIE["email"];
+        $userid = $_COOKIE["id"];
         $state = mysqli_real_escape_string($con, $jsonData["state"]);
         $city = mysqli_real_escape_string($con, $jsonData["city"]);
         $city = trim($city);
@@ -14,7 +14,7 @@
         $state = strtolower($state);
         $state = str_replace(' ', '', $state);
 
-        $searchResults = mysqli_query($con, "SELECT * FROM listingdata WHERE REPLACE(LOWER(stat), ' ', '') = REPLACE(LOWER('$state'), ' ', '') AND (LOWER(city) = LOWER('$city') OR LOWER(addy) LIKE '%$city%') AND expired = 'false' AND email <> '$email';");
+        $searchResults = mysqli_query($con, "SELECT * FROM listingdata WHERE REPLACE(LOWER(stat), ' ', '') = REPLACE(LOWER('$state'), ' ', '') AND (LOWER(city) = LOWER('$city') OR LOWER(addy) LIKE '%$city%') AND expired = 'false' AND userid <> '$userid';");
 
         $response = array();
 

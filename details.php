@@ -186,7 +186,7 @@
         <div class="action-buttons">
             <button onclick="location.href='property.php';">Home</button>
             <button onclick="toggleMode()">Change Mode</button>
-            <button id="edt" onclick="edit()" disabled>Edit Listing</button>
+            <button id="edt" onclick="edit()" hidden>Edit Listing</button>
             <button onclick="logoutf()">Log Out</button>
         </div>
 
@@ -198,14 +198,14 @@
                 <div class="slider-images">
                     <?php
                     $con = mysqli_connect("localhost", "root", "", "property");
-                    $email = $_COOKIE["email"];
+                    $userid = $_COOKIE["id"];
                     $name = $_COOKIE["name"];
                     $id = $_GET['listing_id'];
         
                     $result = mysqli_query($con, "SELECT * FROM listingdata WHERE id = $id");
                     if ($row = mysqli_fetch_assoc($result)) {
-                        if ($email == $row['email']) {
-                            echo '<script>document.getElementById("edt").disabled = false;</script>';
+                        if ($userid == $row['userid']) {
+                            echo '<script>document.getElementById("edt").hidden = false;</script>';
                         }
                         $images = $row['images'];
                         $images = explode(',', $images);
@@ -231,8 +231,8 @@
         <div class="details">
             <?php
             $con = mysqli_connect("localhost", "root", "", "property");
-            $email = $row["email"];
-            $name = $row["nam"];
+            $email = $_COOKIE["email"];
+            $name = $_COOKIE["name"];
             $id = $_GET['listing_id'];
             $pn = $row["phone"];
             $title = $row["title"];

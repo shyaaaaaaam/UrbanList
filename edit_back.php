@@ -1,6 +1,7 @@
 <?php
 $con = mysqli_connect("localhost", "root", "", "property");
 $id = $_POST["listing_id"];
+$userid = $_COOKIE["id"];
 $name = $_COOKIE['name'];
 $email = $_COOKIE["email"];
 if ($_POST["Phone_number"] == "") {
@@ -51,10 +52,10 @@ if ($file_count > 0) {
 
 if (!empty($image_filenames)) {
     $image_filenames_str = implode(', ', $image_filenames);
-    $update = mysqli_query($con, "UPDATE listingdata SET images = '$image_filenames_str' WHERE id = '$id';");
+    $update = mysqli_query($con, "UPDATE listingdata SET images = '$image_filenames_str' WHERE id = '$id' AND userid = '$userid';");
 }
 
-$update = mysqli_query($con, "UPDATE listingdata SET email = '$email', phone = '$pn', title = '$title', descrip = '$descrip', city = '$city', stat = '$state', addy = '$address', bhk = '$bhk', price = '$price', purpose = '$purpose', sqft = '$sqft', advance = '$advance', parking = '$parking', floor = '$floor', balcony = '$balcony', da = '$date', age = '$age', bathroom = '$bathroom', secure = '$secure', elevator = '$elevator', expired = '$expired' WHERE id = '$id';");
+$update = mysqli_query($con, "UPDATE listingdata SET phone = '$pn', title = '$title', descrip = '$descrip', city = '$city', stat = '$state', addy = '$address', bhk = '$bhk', price = '$price', purpose = '$purpose', sqft = '$sqft', advance = '$advance', parking = '$parking', floor = '$floor', balcony = '$balcony', da = '$date', age = '$age', bathroom = '$bathroom', secure = '$secure', elevator = '$elevator', expired = '$expired' WHERE id = '$id' AND userid = '$userid';");
 
 $xz = mysqli_close($con);
 

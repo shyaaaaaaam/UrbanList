@@ -173,11 +173,12 @@
 
     <?php
         $id = $_GET['listing_id'];
-        $email = $_COOKIE["email"];
+        $userid = $_COOKIE["id"];
         $con = mysqli_connect("localhost", "root", "", "property");
-        $query = mysqli_query($con, "SELECT * FROM listingdata WHERE email = '$email' AND id = '$id';");
+        $query = mysqli_query($con, "SELECT * FROM listingdata WHERE userid = '$userid' AND id = '$id';");
         if ($row = mysqli_fetch_assoc($query)) {
             $name = $_COOKIE['name'];
+            $email = $_COOKIE["email"];
             $pn = $row["phone"];
             $title = $row["title"];
             $descrip = $row["descrip"];

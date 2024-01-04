@@ -323,9 +323,9 @@
     <div id="userListingsContainer">
         <?php
             $con = mysqli_connect("localhost", "root", "", "property");
-            $email = $_COOKIE["email"];
+            $userid = $_COOKIE["id"];
 
-            $userListings = mysqli_query($con, "SELECT * FROM listingdata WHERE email = '$email';");
+            $userListings = mysqli_query($con, "SELECT * FROM listingdata WHERE userid = '$userid';");
 
             if ($userListings && mysqli_num_rows($userListings) > 0) {
                 echo "<h2 style='color: goldenrod;'>Your Listings:</h2>";
